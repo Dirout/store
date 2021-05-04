@@ -12,7 +12,7 @@ collections:
     folder: "products"
     create: true
     slug: "{{slug}}"
-    preview_path: "products/{{slug}}.html"
+    preview_path: "products/{{slug}}"
     extension: "mokkf"
     format: "yaml-frontmatter"
     editor:
