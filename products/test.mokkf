@@ -1,0 +1,10 @@
+---
+author: Evan
+title: "Test Product"
+price: 95
+image: "https://upload.wikimedia.org/wikipedia/commons/0/07/Honeycrisp-Apple.jpg"
+quantity: 1
+collection: products
+category: "Jewelry"
+permalink: none
+---

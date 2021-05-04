@@ -1,0 +1,17 @@
+locale: en_US
+title: Store
+description: Store
+url: https://dirout.github.io/store
+logo: https://raw.githubusercontent.com/Dirout/Dirout.github.io/master/branding/vector/logo.svg
+image: https://raw.githubusercontent.com/Dirout/Dirout.github.io/master/branding/web/logo_github.png
+navitems:
+  - name: Home
+    url: /index.html
+  - name: Store
+    url: /store/index.html
+authors:
+  - Evan
+categories:
+  - "Jewelry"
+  - "Wood Crafts"
+  - "Rustic Art & Decor"
