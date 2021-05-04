@@ -30,6 +30,10 @@ body {
 	background-color: lightsteelblue;
 }
 
+.card-group {
+	max-width: 50%;
+}
+
 h1 {
   font-size: 30px;
   letter-spacing: -1px;
