@@ -8,7 +8,7 @@ navitems:
   - name: Home
     url: /index.html
   - name: Store
-    url: /store/index.html
+    url: /products/index.html
 authors:
   - Evan
 categories:

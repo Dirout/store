@@ -1,7 +1,7 @@
 ---
 layout: default
 markdown: false
-permalink: "store/index.html"
+permalink: "products/index.html"
 ---
 
 <h3 class="posts-item-note" aria-label="Products">Products</h3>
@@ -36,7 +36,7 @@ permalink: "store/index.html"
         {% else %}
         <img src="{{ product.data.image }}" class="card-img-top" alt="{{ product.data.title }}">
         {% endif %}
-        <h4 class="card-title">{{ product.data.title }} <span class="badge bg-secondary">{{ product.data.quantity }}</span></h5>
+        <h4 class="card-title mt-3">{{ product.data.title }} <span class="badge bg-secondary">{{ product.data.quantity }}</span></h5>
         <p class="card-text">{{ product.content }}</p>
         <h5 class="card-text">${{ product.data.price }} USD</p>
         <a href="{{ product.url | prepend: global.url }}" class="btn btn-primary">Take a look →</a>
