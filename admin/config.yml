@@ -2,8 +2,6 @@ backend:
   name: github
   repo: Dirout/store
   branch: master
-  open_authoring: true
-publish_mode: editorial_workflow
 media_folder: "assets/img/uploads"
 site_url: https://dirout.github.io/store
 logo_url: https://dirout.github.io/assets/icons/vector/logo.svg
@@ -13,7 +11,7 @@ collections:
     label_singular: "Product"
     folder: "products"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     preview_path: "products/{{slug}}.html"
     extension: "mokkf"
     format: "yaml-frontmatter"
