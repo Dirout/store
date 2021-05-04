@@ -1,0 +1,16 @@
+---
+title: "Content Management"
+permalink: "/admin/index.html"
+markdown: false
+---
+
+<!doctype html>
+<html>
+{% capture head %}
+{% include head.html %}
+{% endcapture %}
+{{ head | replace: '<link rel="stylesheet" href="https://dirout.github.io/store/assets/css/style.css" />', '' }}
+<body>
+  <script src="https://unpkg.com/netlify-cms/dist/netlify-cms.js"></script>
+</body>
+</html>

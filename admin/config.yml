@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: Dirout/store
+  branch: master
+  open_authoring: true
+publish_mode: editorial_workflow
+media_folder: "assets/img/uploads"
+site_url: https://dirout.github.io/store
+logo_url: https://dirout.github.io/assets/icons/vector/logo.svg
+collections:
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    folder: "products"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "products/{{slug}}.html"
+    extension: "mokkf"
+    format: "yaml-frontmatter"
+    editor:
+      preview: false
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "product"}
+      - {label: "Collection", name: "collection", widget: "hidden", default: "products"}
+      - {label: "Permalink", name: "permalink", widget: "hidden", default: "/{{ page.data.collection }}/{{ page.name }}/index.html"}
+      - {label: "Markdown", name: "markdown", widget: "hidden", default: true}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "select", options: ["Evan"], required: true}
+      - {label: "Category", name: "category", widget: "select", options: ["Jewelry", "Wood Crafts", "Rustic Art & Decor"], required: true}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Quantity", name: "quantity", widget: "number"}
+      - {label: "Price (USD)", name: "price", widget: "number", step: 0.01}
+      - {label: "Description", name: "body", widget: "markdown"}
