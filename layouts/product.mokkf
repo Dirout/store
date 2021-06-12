@@ -37,8 +37,20 @@ markdown: false
 <div class="product-details">
     
 
-    <h1>{{ page.data.title }} <span class="badge bg-secondary">{{ page.data.quantity }} left</span></h1>
-    <h2>${{ page.data.price }} USD</h2>
+    <h1>{{ page.data.title }} <span class="badge bg-primary">${{ page.data.price }} USD</span></h1>
+    <h2>{{ page.data.quantity }} left</h2>
+
+    <button class="btn btn-primary mb-2 snipcart-add-item"
+        data-item-id="{{ page.name }}"
+        data-item-price="{{ page.data.price }}"
+        data-item-url="{{ page.url }}"
+        data-item-description="{{ page.content | strip_html }}"
+        data-item-image="{% if page.data.image.first %}{{ page.data.image.first }}{% else %}{{ page.data.image }}{% endif %}"
+        data-item-name="{{ page.data.title }}"
+        data-item-categories="{{ page.data.category }}"
+        data-item-max-quantity="{{ page.data.quantity }}">
+    Add to cart
+    </button>
 
     {{ page.content }}
 </div>

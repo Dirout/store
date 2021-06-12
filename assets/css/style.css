@@ -61,7 +61,7 @@ p {
   line-height: 1.25;
 }
 
-.product-img, .card-img, .card-img-bottom, .card-img-top, .carousel, .carousel-inner {
+.card-img, .card-img-bottom, .card-img-top, .carousel, .carousel-inner {
   height: 16rem;
   object-fit: contain;
 }
@@ -87,7 +87,7 @@ p {
   object-fit: contain;
 }
 
-.product-imgs > .carousel > .carousel-inner > .carousel-item > img, .product-imgs > .carousel > .carousel-inner
+.product-imgs > .carousel > .carousel-inner > .carousel-item > img, .product-imgs > .carousel > .carousel-inner, .product-img
 {
   height: 50vh;
 }
