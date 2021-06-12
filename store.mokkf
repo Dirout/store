@@ -39,7 +39,9 @@ permalink: "products/index.html"
         <h4 class="card-title mt-3">{{ product.data.title }} <span class="badge bg-primary">${{ product.data.price }} USD</span></h5>
         <h5 class="card-text">{{ product.data.quantity }} left</h5>
         <p class="card-text">{{ product.content }}</p>
-        <a href="{{ product.url | prepend: global.url }}" class="btn btn-primary">Take a look →</a>
+      </div>
+      <div class="card-footer">
+        <a href="{{ product.url | prepend: global.url }}" class="btn btn-primary w-100">Take a look →</a>
       </div>
     </div>
   {%- endfor -%}
