@@ -61,7 +61,33 @@ p {
   line-height: 1.25;
 }
 
-.card-img, .card-img-bottom, .card-img-top, .carousel-inner .carousel-item, .active {
+.product-img, .card-img, .card-img-bottom, .card-img-top, .carousel, .carousel-inner {
   height: 16rem;
   object-fit: contain;
+}
+
+.product-img {
+  margin: 0 0 2rem 0;
+}
+
+.product-details {
+  margin-left: 7rem;
+}
+
+.carousel { 
+  background: grey;
+}
+
+.product-imgs > .carousel { 
+  width: 50vw;
+  height: 50vh;
+}
+
+.carousel-item > img {
+  object-fit: contain;
+}
+
+.product-imgs > .carousel > .carousel-inner > .carousel-item > img, .product-imgs > .carousel > .carousel-inner
+{
+  height: 50vh;
 }
