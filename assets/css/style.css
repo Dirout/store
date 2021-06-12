@@ -60,3 +60,8 @@ h2 {
 p {
   line-height: 1.25;
 }
+
+.card-img, .card-img-bottom, .card-img-top, .carousel-inner .carousel-item, .active {
+  height: 16rem;
+  object-fit: contain;
+}
