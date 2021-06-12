@@ -2,3 +2,43 @@
 layout: default
 markdown: false
 ---
+
+<div class="position-relative">
+  <div class="d-flex justify-content-center product-imgs">
+    {% if page.data.image.first %}
+    <div id="{{ page.name }}-indicators" class="carousel slide product-img" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+        {%- for i in page.data.image -%}
+        <button type="button" data-bs-target="{{ page.name }}-indicators" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.index0 == 0%}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.index }}"></button>
+        {%- endfor -%}
+        </div>
+        <div class="carousel-inner rounded">
+        {%- for image in page.data.image -%}
+        <div class="carousel-item {% if forloop.index0 == 0 %}active{% endif %}">
+            <img src="{{ image }}" class="d-block mx-auto" alt="{{ page.data.title }}">
+        </div>
+        {%- endfor -%}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#{{ page.name }}-indicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#{{ page.name }}-indicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    {% else %}
+    <img src="{{ page.data.image }}" class="product-img rounded" alt="{{ page.data.title }}">
+    {% endif %}
+  </div>
+</div>
+
+<div class="product-details">
+    
+
+    <h1>{{ page.data.title }} <span class="badge bg-secondary">{{ page.data.quantity }} left</span></h1>
+    <h2>${{ page.data.price }} USD</h2>
+
+    {{ page.content }}
+</div>
