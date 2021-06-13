@@ -4,55 +4,76 @@ markdown: false
 permalink: "products/index.html"
 ---
 
-{%- for category in global.categories -%}
-{%- if forloop.index0 > 0 -%}<hr class="mt-4">{%- endif -%}
-<h3 class="posts-item-note{%- if forloop.index0 > 0 -%} mt-2{%- endif -%}" aria-label="{{ category }}" id="{{ category | downcase | strip | url_encode }}">{{ category }}</h3>
-<div class="card-group">
-  {% assign sorted_products = collections["products"] | sort: "name" %}
-  {% assign added_products = 0 %}
-  {%- for product in sorted_products -%}
-    {%- if product.data.category == category -%}
-    {% assign added_products = added_products | plus: 1 %}
-    <div class="card">
-      <div class="card-body">
-        {% if product.data.image.first %}
-        <div id="{{ product.name }}-indicators" class="carousel slide card-img-top" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            {%- for i in product.data.image -%}
-            <button type="button" data-bs-target="{{ product.name }}-indicators" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.index0 == 0%}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.index }}"></button>
-            {%- endfor -%}
-          </div>
-          <div class="carousel-inner rounded">
-            {%- for image in product.data.image -%}
-            <div class="carousel-item {% if forloop.index0 == 0 %}active{% endif %}">
-              <img src="{{ image }}" class="d-block w-100" alt="{{ product.data.title }}">
+{% assign sorted_categories = global.categories | sort_natural %}
+{% assign sorted_products = collections["products"] | sort_natural: "name" %}
+
+<div class="store-container">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark store-sidebar" style="width: 280px;">
+    <span class="fs-4">Products</span>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      {%- for category in sorted_categories -%}
+      <li>
+        <a href="#{{ category | downcase | strip | url_encode }}" class="nav-link text-white">
+          <use xlink:href="#{{ category | downcase | strip | url_encode }}"></use>
+          {{ category }}
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+
+  <div class="d-flex flex-column flex-shrink-0 p-3">
+    {%- for category in sorted_categories -%}
+    {%- if forloop.index0 > 0 -%}<hr class="mt-4">{%- endif -%}
+    <h3 class="posts-item-note{%- if forloop.index0 > 0 -%} mt-2{%- endif -%}" aria-label="{{ category }}" id="{{ category | downcase | strip | url_encode }}">{{ category }}</h3>
+    <div class="card-group">
+      {% assign added_products = 0 %}
+      {%- for product in sorted_products -%}
+        {%- if product.data.category == category -%}
+        {% assign added_products = added_products | plus: 1 %}
+        <div class="card">
+          <div class="card-body">
+            {% if product.data.image.first %}
+            <div id="{{ product.name }}-indicators" class="carousel slide card-img-top" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                {%- for i in product.data.image -%}
+                <button type="button" data-bs-target="{{ product.name }}-indicators" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.index0 == 0%}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.index }}"></button>
+                {%- endfor -%}
+              </div>
+              <div class="carousel-inner rounded">
+                {%- for image in product.data.image -%}
+                <div class="carousel-item {% if forloop.index0 == 0 %}active{% endif %}">
+                  <img src="{{ image }}" class="d-block w-100" alt="{{ product.data.title }}">
+                </div>
+                {%- endfor -%}
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#{{ product.name }}-indicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#{{ product.name }}-indicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            {%- endfor -%}
+            {% else %}
+            <img src="{{ product.data.image }}" class="card-img-top rounded" alt="{{ product.data.title }}">
+            {% endif %}
+            <h4 class="card-title mt-3">{{ product.data.title }} <span class="badge bg-primary">${{ product.data.price }} USD</span></h5>
+            <h5 class="card-text">{{ product.data.quantity }} left</h5>
+            <p class="card-text">{{ product.content }}</p>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#{{ product.name }}-indicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#{{ product.name }}-indicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <div class="card-footer">
+            <a href="{{ product.url | prepend: global.url }}" class="btn btn-primary w-100">Take a look →</a>
+          </div>
         </div>
-        {% else %}
-        <img src="{{ product.data.image }}" class="card-img-top rounded" alt="{{ product.data.title }}">
-        {% endif %}
-        <h4 class="card-title mt-3">{{ product.data.title }} <span class="badge bg-primary">${{ product.data.price }} USD</span></h5>
-        <h5 class="card-text">{{ product.data.quantity }} left</h5>
-        <p class="card-text">{{ product.content }}</p>
-      </div>
-      <div class="card-footer">
-        <a href="{{ product.url | prepend: global.url }}" class="btn btn-primary w-100">Take a look →</a>
-      </div>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if added_products == 0 -%}
+      <p>No products available</p>
+      {%- endif -%}
     </div>
-    {%- endif -%}
-  {%- endfor -%}
-  {%- if added_products == 0 -%}
-  <p>No products available</p>
-  {%- endif -%}
+    {%- endfor -%}
+  </div>
 </div>
-{%- endfor -%}
