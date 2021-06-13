@@ -2,55 +2,54 @@
 layout: default
 markdown: false
 ---
-
-<div class="position-relative">
-  <div class="d-flex justify-content-center mb-4 product-imgs">
-    {% if page.data.image.first %}
-    <div id="{{ page.name }}-indicators" class="carousel slide product-img" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-        {%- for i in page.data.image -%}
-        <button type="button" data-bs-target="{{ page.name }}-indicators" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.index0 == 0%}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.index }}"></button>
-        {%- endfor -%}
-        </div>
-        <div class="carousel-inner rounded">
-        {%- for image in page.data.image -%}
-        <div class="carousel-item {% if forloop.index0 == 0 %}active{% endif %}">
-            <img src="{{ image }}" class="d-block mx-auto" alt="{{ page.data.title }}">
-        </div>
-        {%- endfor -%}
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#{{ page.name }}-indicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#{{ page.name }}-indicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-        </button>
+<div class="product-page">
+  <div class="product-page-container">
+    <div class="mb-4 product-imgs">
+      {% if page.data.image.first %}
+      <div id="{{ page.name }}-indicators" class="carousel slide product-img" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+          {%- for i in page.data.image -%}
+          <button type="button" data-bs-target="{{ page.name }}-indicators" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.index0 == 0%}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.index }}"></button>
+          {%- endfor -%}
+          </div>
+          <div class="carousel-inner rounded">
+          {%- for image in page.data.image -%}
+          <div class="carousel-item {% if forloop.index0 == 0 %}active{% endif %}">
+              <img src="{{ image }}" class="d-block mx-auto" alt="{{ page.data.title }}">
+          </div>
+          {%- endfor -%}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#{{ page.name }}-indicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#{{ page.name }}-indicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+      {% else %}
+      <img src="{{ page.data.image }}" class="product-img rounded" alt="{{ page.data.title }}">
+      {% endif %}
     </div>
-    {% else %}
-    <img src="{{ page.data.image }}" class="product-img rounded" alt="{{ page.data.title }}">
-    {% endif %}
+
+    <div class="product-details">
+        <h1>{{ page.data.title }} <span class="badge bg-primary">${{ page.data.price }} USD</span></h1>
+        <h2>{{ page.data.quantity }} left</h2>
+
+        <button class="btn btn-primary mb-2 snipcart-add-item"
+            data-item-id="{{ page.name }}"
+            data-item-price="{{ page.data.price }}"
+            data-item-url="{{ page.url | remove: 'index.html' }}"
+            data-item-description="{{ page.content | strip_html }}"
+            data-item-image="{% if page.data.image.first %}{{ page.data.image.first }}{% else %}{{ page.data.image }}{% endif %}"
+            data-item-name="{{ page.data.title }}"
+            data-item-categories="{{ page.data.category }}"
+            data-item-max-quantity="{{ page.data.quantity }}">
+        Add to cart
+        </button>
+
+        {{ page.content }}
+    </div>
   </div>
-</div>
-
-<div class="product-details">
-    
-
-    <h1>{{ page.data.title }} <span class="badge bg-primary">${{ page.data.price }} USD</span></h1>
-    <h2>{{ page.data.quantity }} left</h2>
-
-    <button class="btn btn-primary mb-2 snipcart-add-item"
-        data-item-id="{{ page.name }}"
-        data-item-price="{{ page.data.price }}"
-        data-item-url="{{ page.url | remove: 'index.html' }}"
-        data-item-description="{{ page.content | strip_html }}"
-        data-item-image="{% if page.data.image.first %}{{ page.data.image.first }}{% else %}{{ page.data.image }}{% endif %}"
-        data-item-name="{{ page.data.title }}"
-        data-item-categories="{{ page.data.category }}"
-        data-item-max-quantity="{{ page.data.quantity }}">
-    Add to cart
-    </button>
-
-    {{ page.content }}
 </div>
