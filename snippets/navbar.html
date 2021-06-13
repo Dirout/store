@@ -53,21 +53,6 @@
       </ul>
       <hr />
       <button class="btn mx-2 my-2 snipcart-checkout">{% include shopping-cart.html %}</button>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" id="search-input" placeholder="Search for products" aria-label="Search" />
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#search-results">
-          Search
-        </button>
-
-        <script src="{{ global.url }}/assets/js/search.min.js"></script>
-        <script>
-            var search = StoreSearch({
-                searchInput: document.getElementById("search-input"),
-                resultsContainer: document.getElementById("search-results-list"),
-                json: "{{ global.url }}/assets/search.json",
-            });
-        </script>
-      </form>
     </div>
   </div>
 </nav>
