@@ -4,10 +4,15 @@ markdown: false
 permalink: "products/index.html"
 ---
 
-<h3 class="posts-item-note" aria-label="Products">Products</h3>
+{%- for category in global.categories -%}
+{%- if forloop.index0 > 0 -%}<hr class="mt-4">{%- endif -%}
+<h3 class="posts-item-note{%- if forloop.index0 > 0 -%} mt-2{%- endif -%}" aria-label="{{ category }}" id="{{ category | downcase | strip | url_encode }}">{{ category }}</h3>
 <div class="card-group">
   {% assign sorted_products = collections["products"] | sort: "name" %}
+  {% assign added_products = 0 %}
   {%- for product in sorted_products -%}
+    {%- if product.data.category == category -%}
+    {% assign added_products = added_products | plus: 1 %}
     <div class="card">
       <div class="card-body">
         {% if product.data.image.first %}
@@ -44,5 +49,10 @@ permalink: "products/index.html"
         <a href="{{ product.url | prepend: global.url }}" class="btn btn-primary w-100">Take a look →</a>
       </div>
     </div>
+    {%- endif -%}
   {%- endfor -%}
+  {%- if added_products == 0 -%}
+  <p>No products available</p>
+  {%- endif -%}
 </div>
+{%- endfor -%}
