@@ -107,7 +107,7 @@ p {
   height: -webkit-fill-available;
   min-height: 100vh;
   overflow-x: auto;
-  margin: -2rem 0 0 -1rem;
+  margin: -1rem 0 0 0;
 }
 
 .product-imgs {
@@ -120,5 +120,6 @@ p {
 }
 
 .home { 
-  margin-top: 25%;
+  display: flex;
+  justify-content: center;
 }
