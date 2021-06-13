@@ -52,23 +52,7 @@
   <link rel="stylesheet" href="https://dirout.github.io/store/assets/css/style.css" />
 </head>
 
-  <div class="modal fade" id="search-results" tabindex="-1" aria-labelledby="search-results-label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="search-results-label">Results</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <ul class="modal-body" aria-labelledby="searchDropdown" id="search-results-list"></ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<nav class="navbar navbar-expand-lg navbar-light mb-3">
+  <nav class="navbar navbar-expand-lg navbar-light mb-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="https://dirout.github.io/store">
       <img src="https://raw.githubusercontent.com/Dirout/Dirout.github.io/master/branding/vector/logo.svg" alt="Cincinnati Cedar Crafts" width="50">
@@ -89,34 +73,33 @@
 </nav>
 
 
-  
-<div class="position-relative">
-  <div class="d-flex justify-content-center mb-4 product-imgs">
-    
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Honeycrisp-Apple.jpg" class="product-img rounded" alt="Test Product">
-    
+  <div class="product-page">
+  <div class="product-page-container">
+    <div class="mb-4 product-imgs">
+      
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Honeycrisp-Apple.jpg" class="product-img rounded" alt="Test Product">
+      
+    </div>
+
+    <div class="product-details">
+        <h1>Test Product <span class="badge bg-primary">$95 USD</span></h1>
+        <h2>1 left</h2>
+
+        <button class="btn btn-primary mb-2 snipcart-add-item"
+            data-item-id="test"
+            data-item-price="95"
+            data-item-url="/products/test/"
+            data-item-description=""
+            data-item-image="https://upload.wikimedia.org/wikipedia/commons/0/07/Honeycrisp-Apple.jpg"
+            data-item-name="Test Product"
+            data-item-categories="Jewelry"
+            data-item-max-quantity="1">
+        Add to cart
+        </button>
+
+        
+    </div>
   </div>
-</div>
-
-<div class="product-details">
-    
-
-    <h1>Test Product <span class="badge bg-primary">$95 USD</span></h1>
-    <h2>1 left</h2>
-
-    <button class="btn btn-primary mb-2 snipcart-add-item"
-        data-item-id="test"
-        data-item-price="95"
-        data-item-url="/products/test/"
-        data-item-description=""
-        data-item-image="https://upload.wikimedia.org/wikipedia/commons/0/07/Honeycrisp-Apple.jpg"
-        data-item-name="Test Product"
-        data-item-categories="Jewelry"
-        data-item-max-quantity="1">
-    Add to cart
-    </button>
-
-    
 </div>
 
   

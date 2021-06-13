@@ -66,26 +66,45 @@ p {
   margin: 0 0 2rem 0;
 }
 
-.product-details {
-  margin-left: 7rem;
-}
-
 .carousel { 
   background: grey;
 }
 
-.product-imgs > .carousel { 
-  width: 50vw;
-  height: 50vh;
+@media screen and (min-width: 576px)
+{
+  .product-imgs > .carousel { 
+    width: 50vw;
+    height: 15rem;
+  }
+}
+
+@media screen and (max-width: 576px)
+{
+  .product-imgs > .carousel { 
+    width: 95vw;
+    height: 20rem;
+  }
 }
 
 .carousel-item > img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   object-fit: contain;
 }
 
-.product-imgs > .carousel > .carousel-inner > .carousel-item > img, .product-imgs > .carousel > .carousel-inner, .product-img
-{
-  height: 50vh;
+@media screen and (max-width: 576px) {
+  .product-imgs > .carousel > .carousel-inner > .carousel-item > img, .product-imgs > .carousel > .carousel-inner, .product-img
+  {
+    height: 20rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .product-imgs > .carousel > .carousel-inner > .carousel-item > img, .product-imgs > .carousel > .carousel-inner, .product-img
+  {
+    height: 15rem;
+  }
 }
 
 .card {
@@ -109,9 +128,18 @@ p {
   padding: 1rem 1rem 1rem 1rem;
 }
 
-.product-imgs {
-  padding: 0 1rem 1rem 0;
-  max-height: 50vh;
+@media screen and (max-width: 576px)
+{
+  .product-imgs {
+    max-height: 20rem;
+  }
+}
+
+@media screen and (min-width: 576px)
+{
+  .product-imgs {
+    max-height: 15rem;
+  }
 }
 
 .product-img {
@@ -121,4 +149,13 @@ p {
 .home { 
   display: flex;
   justify-content: center;
+}
+
+.product-page {
+  display: flex;
+  justify-content: center;
+}
+
+.product-page-container {
+  padding: 1rem 1rem 1rem 1rem;
 }
