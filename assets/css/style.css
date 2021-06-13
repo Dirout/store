@@ -118,3 +118,7 @@ p {
 .product-img {
   object-fit: contain;
 }
+
+.home { 
+  margin-top: 25%;
+}
