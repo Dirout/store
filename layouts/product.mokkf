@@ -4,7 +4,7 @@ markdown: false
 ---
 
 <div class="position-relative">
-  <div class="d-flex justify-content-center product-imgs">
+  <div class="d-flex justify-content-center mb-4 product-imgs">
     {% if page.data.image.first %}
     <div id="{{ page.name }}-indicators" class="carousel slide product-img" data-bs-ride="carousel">
         <div class="carousel-indicators">

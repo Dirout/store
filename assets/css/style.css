@@ -107,6 +107,14 @@ p {
   height: -webkit-fill-available;
   min-height: 100vh;
   overflow-x: auto;
-  overflow-y: hidden;
   margin: -2rem 0 0 -1rem;
+}
+
+.product-imgs {
+  padding: 0 1rem 1rem 0;
+  max-height: 50vh;
+}
+
+.product-img {
+  object-fit: contain;
 }
