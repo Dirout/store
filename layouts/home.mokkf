@@ -4,8 +4,8 @@ markdown: false
 author: both
 ---
 
-<div class="position-relative">
-  <div class="position-absolute top-50 start-50 translate-middle home">
+<div class="home">
+  <div class="content">
     <img class="rounded mx-auto d-block" src="{{ global.logo }}" width=80>
     <br>
     {{ page.content }}

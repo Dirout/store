@@ -34,6 +34,7 @@ permalink: "products/index.html"
         {% assign added_products = added_products | plus: 1 %}
         <div class="card">
           <div class="card-body">
+            <a href="{{ product.url | remove: 'index.html' | prepend: global.url }}">
             {% if product.data.image.first %}
             <div id="{{ product.name }}-indicators" class="carousel slide card-img-top" data-bs-ride="carousel">
               <div class="carousel-indicators">
@@ -60,6 +61,7 @@ permalink: "products/index.html"
             {% else %}
             <img src="{{ product.data.image }}" class="card-img-top rounded" alt="{{ product.data.title }}">
             {% endif %}
+            </a>
             <h4 class="card-title mt-3">{{ product.data.title }} <span class="badge bg-primary">${{ product.data.price }} USD</span></h5>
             <h5 class="card-text">{{ product.data.quantity }} left</h5>
             <p class="card-text">{{ product.content }}</p>
