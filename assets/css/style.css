@@ -104,7 +104,6 @@ p {
 .store-container {
   display: flex;
   flex-wrap: nowrap;
-  height: -webkit-fill-available;
   min-height: 100vh;
   overflow-x: auto;
   margin: -1rem 0 0 0;
