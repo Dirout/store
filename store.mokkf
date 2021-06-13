@@ -65,7 +65,7 @@ permalink: "products/index.html"
             <p class="card-text">{{ product.content }}</p>
           </div>
           <div class="card-footer">
-            <a href="{{ product.url | prepend: global.url }}" class="btn btn-primary w-100">Take a look →</a>
+            <a href="{{ product.url | remove: 'index.html' | prepend: global.url }}" class="btn btn-primary w-100">Take a look →</a>
           </div>
         </div>
         {%- endif -%}

@@ -6,9 +6,9 @@ logo: https://raw.githubusercontent.com/Dirout/Dirout.github.io/master/branding/
 image: https://raw.githubusercontent.com/Dirout/Dirout.github.io/master/branding/web/logo_github.png
 navitems:
   - name: Home
-    url: /index.html
+    url: /
   - name: Store
-    url: /products/index.html
+    url: /products
 authors:
   - Evan
 categories:
