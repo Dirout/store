@@ -97,7 +97,7 @@ p {
 }
 
 .store-sidebar {
-  width: 20rem;
+  min-width: 19.5%;
   float: left;
 }
 

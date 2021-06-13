@@ -8,7 +8,7 @@ permalink: "products/index.html"
 {% assign sorted_products = collections["products"] | sort_natural: "name" %}
 
 <div class="store-container">
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark store-sidebar" style="width: 280px;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark store-sidebar">
     <span class="fs-4">Products</span>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
