@@ -37,10 +37,6 @@ h1 {
   font-weight: bold;
 }
 
-.content {
-  padding: 1rem 0 0 1rem;
-}
-
 h3 {
   color: #aaa;
   font-weight: bold;
@@ -107,6 +103,10 @@ p {
   min-height: 100vh;
   overflow-x: auto;
   margin: -1rem 0 0 0;
+}
+
+.home-container {
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .product-imgs {
