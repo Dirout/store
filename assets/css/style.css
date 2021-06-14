@@ -159,3 +159,7 @@ p {
 .product-page-container {
   padding: 1rem 1rem 1rem 1rem;
 }
+
+.cart-pill-bg {
+  background-color: darkslategrey;
+}
