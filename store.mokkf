@@ -26,7 +26,7 @@ permalink: "products/index.html"
   <div class="d-flex flex-column flex-grow-1 p-3">
     {%- for category in sorted_categories -%}
     {%- if forloop.index0 > 0 -%}<hr class="mt-4">{%- endif -%}
-    <h3 class="posts-item-note{%- if forloop.index0 > 0 -%} mt-2{%- endif -%}" aria-label="{{ category }}" id="{{ category | downcase | strip | url_encode }}">{{ category }}</h3>
+    <h1 class="posts-item-note{%- if forloop.index0 > 0 -%} mt-2{%- endif -%}" aria-label="{{ category }}" id="{{ category | downcase | strip | url_encode }}">{{ category }}</h1>
     <div class="card-group">
       {% assign added_products = 0 %}
       {%- for product in sorted_products -%}
