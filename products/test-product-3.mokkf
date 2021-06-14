@@ -1,0 +1,13 @@
+---
+layout: product
+collection: products
+permalink: /{{ page.data.collection }}/{{ page.name }}/index.html
+markdown: true
+title: Test Product 3
+author: Evan
+category: Jewelry
+image: https://upload.wikimedia.org/wikipedia/commons/4/44/Bananas_white_background_DS.jpg
+quantity: 0
+price: 15
+---
+A **beautiful** product! Unfortunately, out of stock!
