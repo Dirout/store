@@ -73,7 +73,7 @@ permalink: "products/index.html"
         {%- endif -%}
       {%- endfor -%}
       {%- if added_products == 0 -%}
-      <p>No products available</p>
+      <p>No products available at this time.</p>
       {%- endif -%}
     </div>
     {%- endfor -%}
